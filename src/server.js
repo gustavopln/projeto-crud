@@ -1,9 +1,13 @@
 //express é uma função, precisa ser chamada para retornar uma aplicação em express
 const express = require('express')
 const path = require('path')
+const db = require('./database')
 
 //dentro de app tem vários métodos que vão ajudar a construir o servidor
 const app = express()
+
+// conexão com o banco de dados
+db.connect()
 
 // definindo o template engine
 app.set('view engine', 'ejs')
