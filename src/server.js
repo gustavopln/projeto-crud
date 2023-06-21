@@ -2,6 +2,7 @@
 const express = require('express')
 const path = require('path')
 const db = require('./database')
+const routes = require('./routes')
 
 //dentro de app tem vários métodos que vão ajudar a construir o servidor
 const app = express()
@@ -19,12 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 // definindo um middleware para habilitar server para receber dados via post (formulário)
 app.use(express.urlencoded({ extended: true}))
 
-// rotas
-app.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Titulo Teste'
-    })
-})
+// definindo as rotas da aplicação
+app.use('/', routes)
 
 // 404 error (not found)
 app.use((req, res) => { // middleware - executa entre uma requisição
