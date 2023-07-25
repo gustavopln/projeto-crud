@@ -1,6 +1,7 @@
 //express é uma função, precisa ser chamada para retornar uma aplicação em express
 const express = require('express')
 const path = require('path')
+
 const db = require('./database')
 const routes = require('./routes')
 
