@@ -5,6 +5,12 @@
     
     <h1><%= title %></h1>
 
+    <%- include('partials/navbar.ejs') %>
+
+    <% if (typeof message !== 'undefined') {%>
+        <%= message %>
+    <% } %>
+
     <form action="/register/add" method="POST">
         <div>
             <label>Nome</label>
@@ -20,7 +26,7 @@
         </div>
         <div>
             <label>Senha</label>
-            <input type="text" name="password" placeholder="Digite a sua senha">
+            <input type="password" name="password" placeholder="Digite a sua senha">
         </div>
         <button type="submit">Cadastrar</button>
     </form>
